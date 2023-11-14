@@ -27,10 +27,6 @@ public class ATM {
         ATMTotal.add(one);
     }
 
-    public ArrayList<Currency> getATMTotal() {
-        return ATMTotal;
-    }
-
     public void withdrawValue(int amount) {
 
         System.out.println("Customer withdraws £" + amount + "\n");
@@ -80,19 +76,12 @@ public class ATM {
             System.out.printf("%s x £1%n", dispensedNotes);
         }
 
+        System.out.println("\nValue quantity of units");
+        for (Currency currency : ATMTotal) {
+            System.out.println(currency.getValue() + " " + currency.getQuantity());
+        }
+
     }
 
-    @Override
-    public String toString() {
-        return "ATM{" +
-                "fifty=" + fifty +
-                ", twenty=" + twenty +
-                ", ten=" + ten +
-                ", five=" + five +
-                ", two=" + two +
-                ", one=" + one +
-                ", ATMTotal=" + ATMTotal +
-                '}';
-    }
 
 }
