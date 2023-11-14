@@ -27,74 +27,57 @@ public class ATM {
         ATMTotal.add(one);
     }
 
-    public Currency getFifty() {
-        return fifty;
-    }
-
-    public void setFifty(Currency fifty) {
-        this.fifty = fifty;
-    }
-
-    public Currency getTwenty() {
-        return twenty;
-    }
-
-    public void setTwenty(Currency twenty) {
-        this.twenty = twenty;
-    }
-
-    public Currency getTen() {
-        return ten;
-    }
-
-    public void setTen(Currency ten) {
-        this.ten = ten;
-    }
-
-    public Currency getFive() {
-        return five;
-    }
-
-    public void setFive(Currency five) {
-        this.five = five;
-    }
-
-    public Currency getTwo() {
-        return two;
-    }
-
-    public void setTwo(Currency two) {
-        this.two = two;
-    }
-
-    public Currency getOne() {
-        return one;
-    }
-
-    public void setOne(Currency one) {
-        this.one = one;
-    }
-
     public ArrayList<Currency> getATMTotal() {
         return ATMTotal;
     }
 
-    public void setATMTotal(ArrayList<Currency> ATMTotal) {
-        this.ATMTotal = ATMTotal;
-    }
-
     public void withdrawValue(int amount) {
 
-        System.out.println("Customer withdraws £" + amount);
+        System.out.println("Customer withdraws £" + amount + "\n");
 
-        for (Currency currency : ATMTotal) {
-            int remainder = amount % currency.getValue();
-            remainder = remainder % currency.getValue();
+        int dispensedNotes;
 
-//            int remainder = amount / currency.getValue();
-//            System.out.println(remainder + " x £" + currency.getValue());
+        if ((amount - 50) >= 0) {
+            dispensedNotes = amount / 50;
+            amount = amount - (dispensedNotes * 50);
 
-//            System.out.println(currency.getQuantity() + " x £" + currency.getValue());
+            System.out.printf("%s x £50%n", dispensedNotes);
+        }
+
+
+        if ((amount - 20) >= 0) {
+            dispensedNotes = amount / 20;
+            amount = amount - (dispensedNotes * 20);
+
+            System.out.printf("%s x £20%n", dispensedNotes);
+        }
+
+        if ((amount - 10) >= 0) {
+            dispensedNotes = amount / 10;
+            amount = amount - (dispensedNotes * 10);
+
+            System.out.printf("%s x £10%n", dispensedNotes);
+        }
+
+        if ((amount - 5) >= 0) {
+            dispensedNotes = amount / 5;
+            amount = amount - (dispensedNotes * 5);
+
+            System.out.printf("%s x £5%n", dispensedNotes);
+        }
+
+        if ((amount - 2) >= 0) {
+            dispensedNotes = amount / 2;
+            amount = amount - (dispensedNotes * 2);
+
+            System.out.printf("%s x £2%n", dispensedNotes);
+        }
+
+        if ((amount - 1) >= 0) {
+            dispensedNotes = amount;
+            amount = 0;
+
+            System.out.printf("%s x £1%n", dispensedNotes);
         }
 
     }
