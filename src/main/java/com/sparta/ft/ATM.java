@@ -38,6 +38,7 @@ public class ATM {
             amount = amount - (dispensedNotes * 50);
 
             System.out.printf("%s x £50%n", dispensedNotes);
+            fifty.setQuantity(fifty.getQuantity() - dispensedNotes);
         }
 
 
@@ -46,6 +47,7 @@ public class ATM {
             amount = amount - (dispensedNotes * 20);
 
             System.out.printf("%s x £20%n", dispensedNotes);
+            twenty.setQuantity(twenty.getQuantity() - dispensedNotes);
         }
 
         if ((amount - 10) >= 0) {
@@ -53,6 +55,7 @@ public class ATM {
             amount = amount - (dispensedNotes * 10);
 
             System.out.printf("%s x £10%n", dispensedNotes);
+            ten.setQuantity(ten.getQuantity() - dispensedNotes);
         }
 
         if ((amount - 5) >= 0) {
@@ -60,6 +63,7 @@ public class ATM {
             amount = amount - (dispensedNotes * 5);
 
             System.out.printf("%s x £5%n", dispensedNotes);
+            five.setQuantity(five.getQuantity() - dispensedNotes);
         }
 
         if ((amount - 2) >= 0) {
@@ -67,6 +71,7 @@ public class ATM {
             amount = amount - (dispensedNotes * 2);
 
             System.out.printf("%s x £2%n", dispensedNotes);
+            two.setQuantity(two.getQuantity() - dispensedNotes);
         }
 
         if ((amount - 1) >= 0) {
@@ -74,6 +79,7 @@ public class ATM {
             amount = 0;
 
             System.out.printf("%s x £1%n", dispensedNotes);
+            one.setQuantity(one.getQuantity() - dispensedNotes);
         }
 
         System.out.println("\nValue quantity of units");
